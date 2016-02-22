@@ -1,0 +1,5 @@
+<h1><%= @article.name %></h1>
+<p>
+  <%= link_to @article.description, "/articles/#{@article.id}" %>
+</p>
+<h6>Added: <%= distance_of_time_in_words @article.date_added, Time.now %> ago</h6>

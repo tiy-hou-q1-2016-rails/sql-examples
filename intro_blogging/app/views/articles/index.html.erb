@@ -1,0 +1,6 @@
+<h1>Articles#index</h1>
+
+<% @articles.each do |row| %>
+  <h1><%= link_to row.name, "/articles/#{row.id}" %></h1>
+  <h6>Added: <%= distance_of_time_in_words row.date_added, Time.now %> ago</h6>
+<% end %>
