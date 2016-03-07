@@ -1,0 +1,21 @@
+<% if @movie.errors.any? %>
+  <div class="errors">
+    <strong><%= pluralize @movie.errors.count, 'error' %> stopped you from getting your job done</strong>
+    <ul>
+      <% @movie.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+
+<% end %>
+
+<%= form_for @movie do |f| %>
+  <div class="">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="">
+    <%= f.submit %>
+  </div>
+<% end %>
