@@ -1,0 +1,27 @@
+<h1><%= @actor.full_name %></h1>
+
+<% if @actor.errors.any? %>
+  <div class="errors">
+    <strong><%= pluralize @actor.errors.count, 'error' %> stopped you from getting your job done</strong>
+    <ul>
+      <% @actor.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+
+<% end %>
+
+<%= form_for @actor do |f| %>
+  <div class="">
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="">
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="">
+    <%= f.submit %>
+  </div>
+<% end %>

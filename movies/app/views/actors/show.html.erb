@@ -1,0 +1,7 @@
+<h1><%= @actor.full_name %></h1>
+
+<p>
+  <%= link_to 'Edit', edit_actor_path(id: @actor.id) %>
+  or
+  <%= link_to 'Delete', actor_path(id: @actor.id), method: :delete, data: {confirm: "Are you sure?"} %>
+</p>
