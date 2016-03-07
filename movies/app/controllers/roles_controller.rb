@@ -11,6 +11,7 @@ class RolesController < ApplicationController
     @role = Role.new
     @role.actor_id = params[:role][:actor_id]
     @role.movie_id = params[:role][:movie_id]
+    @role.character = params[:role][:character]
     if @role.save
       redirect_to roles_path
     else
