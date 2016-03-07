@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   get 'roles' => 'roles#index', as: :roles
+  get 'roles/new' => 'roles#new', as: :new_role
+  post 'roles' => 'roles#create'
 
   get 'actors' => 'actors#index', as: :actors
   get 'actors/new' => 'actors#new', as: :new_actor
