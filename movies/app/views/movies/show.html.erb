@@ -1,5 +1,12 @@
 <h1><%= @movie.title %></h1>
 
+<h5>Actors in Movie</h5>
+<ul>
+  <% @movie.actors.each do |actor| %>
+    <li><%= link_to actor.full_name, actor_path(id: actor.id) %></li>
+  <% end %>
+</ul>
+
 <%= link_to 'Edit', edit_movie_path(id: @movie.id) %>
 or
 <%= link_to 'Delete', movie_path(id: @movie.id), method: :delete, data: {confirm: "Are you sure?"} %>

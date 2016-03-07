@@ -6,6 +6,6 @@
 
 <ul>
   <% @movies.each do |movie| %>
-    <li><%= link_to movie.title, movie_path(id: movie.id) %></li>
+    <li><%= link_to movie.title, movie_path(id: movie.id) %> - (<%= movie.actors.count %>)</li>
   <% end %>
 </ul>

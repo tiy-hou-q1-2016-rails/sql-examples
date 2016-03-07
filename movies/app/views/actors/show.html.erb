@@ -1,5 +1,13 @@
 <h1><%= @actor.full_name %></h1>
 
+<h5>Movies</h5>
+
+<ul>
+  <% @actor.movies.each do |movie| %>
+    <li><%= link_to movie.title, movie_path(id: movie.id) %></li>
+  <% end %>
+</ul>
+
 <p>
   <%= link_to 'Edit', edit_actor_path(id: @actor.id) %>
   or
