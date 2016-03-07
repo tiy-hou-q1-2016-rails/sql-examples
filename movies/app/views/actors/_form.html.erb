@@ -1,5 +1,5 @@
 <% if @actor.errors.any? %>
-  <div class="errors">
+  <div class="alert alert-danger">
     <strong><%= pluralize @actor.errors.count, 'error' %> stopped you from getting your job done</strong>
     <ul>
       <% @actor.errors.full_messages.each do |msg| %>
@@ -11,15 +11,15 @@
 <% end %>
 
 <%= form_for @actor do |f| %>
-  <div class="">
+  <div class="form-group">
     <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
+    <%= f.text_field :first_name, class: "form-control" %>
   </div>
-  <div class="">
+  <div class="form-group">
     <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
+    <%= f.text_field :last_name, class: "form-control" %>
   </div>
-  <div class="">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.submit class: "btn btn-lg btn-primary"%>
   </div>
 <% end %>

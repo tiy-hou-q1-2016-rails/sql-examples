@@ -1,11 +1,14 @@
 <h1>Actors</h1>
 
-<p>
-  <%= link_to 'New Actor', new_actor_path %>
+<p class="text-right">
+  <%= link_to 'New Actor', new_actor_path, class: "btn btn-default" %>
 </p>
 
-<ul>
+<div class="list-group">
   <% @actors.each do |actor| %>
-    <li><%= link_to actor.full_name, actor_path(id: actor.id) %> - (<%= actor.movies.count%>)</li>
+    <%= link_to actor_path(id: actor.id), class: "list-group-item" do %>
+      <%= actor.full_name %>
+      <span class="badge"><%= actor.movies.count %></span>
+    <% end %>
   <% end %>
-</ul>
+</div>

@@ -1,7 +1,7 @@
 <h1>New Role</h1>
 
 <% if @role.errors.any? %>
-  <div class="errors">
+  <div class="alert alert-danger">
     <strong><%= pluralize @role.errors.count, 'error' %> stopped you from getting your job done</strong>
     <ul>
       <% @role.errors.full_messages.each do |msg| %>
@@ -13,19 +13,19 @@
 <% end %>
 
 <%= form_for @role do |f| %>
-  <div class="">
+  <div class="form-group">
     <%= f.label :character %>
-    <%= f.text_field :character %>
+    <%= f.text_field :character, class: "form-control" %>
   </div>
-  <div class="">
+  <div class="form-group">
     <%= f.label :movie %>
-    <%= f.collection_select :movie_id, Movie.all, :id, :title, prompt: true %>
+    <%= f.collection_select :movie_id, Movie.all, :id, :title, {prompt: true}, class: "form-control" %>
   </div>
-  <div class="">
+  <div class="form-group">
     <%= f.label :actor %>
-    <%= f.collection_select :actor_id, Actor.all, :id, :full_name, prompt: true %>
+    <%= f.collection_select :actor_id, Actor.all, :id, :full_name, {prompt: true}, class: "form-control" %>
   </div>
-  <div class="">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.submit "Assign Actor to Movie", class: "btn btn-lg btn-primary" %>
   </div>
 <% end %>
